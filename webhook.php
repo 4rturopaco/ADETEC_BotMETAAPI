@@ -1,6 +1,6 @@
 <?php
 const TOKEN_ADETEC = "ADETECCODEPHPAPIMETA";
-const WEBHOOK_URL = "https://importadoralionmik.com/webhook.php";
+const WEBHOOK_URL = "https//whatsappapi.adetec-it.website/webhook.php";
 
 function verificarToken($req, $res)
 {
