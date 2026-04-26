@@ -44,11 +44,15 @@ function recibirMensajes($req, $res)
             EnviarMensajeWhastapp($comentario, $numero);
         }
 
-        $res->header('Content-Type: application/json');
-        $res->status(200)->send(json_encode(['message' => 'EVENT_RECEIVED']));
+        /*$res->header('Content-Type: application/json');
+        $res->status(200)->send(json_encode(['message' => 'EVENT_RECEIVED']));*/
+        echo json_encode(['message' => 'EVENT_RECEIVED']);
+        exit;
     } catch (Exception $e) {
-        $res->header('Content-Type: application/json');
-        $res->status(200)->send(json_encode(['message' => 'EVENT_RECEIVED']));
+        /*$res->header('Content-Type: application/json');
+        $res->status(200)->send(json_encode(['message' => 'EVENT_RECEIVED']));*/
+        echo json_encode(['message' => 'EVENT_RECEIVED']);
+        exit;
     }
 }
 
@@ -171,8 +175,10 @@ function EnviarMensajeWhastapp($comentario, $numero)
 
     if ($response === false) {
         echo "Error al enviar el mensaje\n";
+        exit;
     } else {
         echo "Mensaje enviado correctamente\n";
+        exit;
     }
 }
 
